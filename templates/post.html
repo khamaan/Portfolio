@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Ecommerce Project</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="default.css">
+	
+
+	<style type="text/css">
+		.img-container{
+			max-width: 600px;
+		}
+
+		img{
+			width: 100%
+		}
+
+	</style>
+
+</head>
+<body>
+	<div class="nav-wrapper">
+
+		<!-- Link around dots-wrapper added after tutorial video -->
+		<a href="#">
+			<div class="dots-wrapper">
+				<div id="dot-1" class="browser-dot"></div>
+				<div id="dot-2" class="browser-dot"></div>
+				<div id="dot-3" class="browser-dot"></div>
+			</div>
+		</a>
+	</div>
+
+	<div class="main-container">
+		<br>
+
+		<div class="img-container">
+			<img src="{% static 'images/ecom1.jpg' %}">
+		</div>
+		
+		<h3>Ecommerce Website</h3>
+
+		<p>This was a project I started back in March 2020 when I first learned python. I was a part of a team when we made this project , I have worked with many features like payment integration using paypal,login register, account activation using email.
+		<br>
+		<br>
+		The application display different products which can be purchased.User can rate the product and track there order and details in Dashboard.
+		<br>
+		<br>
+		The paymet details and recipit is display at the end of the payment and user can take a screen shot or else it will be send to there registerd email.
+		<br>
+		<br>
+		The Application is Fully ready to use as a Online Ecommerce Website with all the features which an Ecommerce Web App requires.
+		<br>
+		<br></p>
+
+		<h5>Technologies:</h5>
+		<ul>
+			<li>- Python</li>
+			<li>- Django </li>
+			<li>- JS</li>
+			<li>- Sqlite3</li>
+			<li>- Html</li>
+			<li>- Css</li>
+			<li>- Bootstrap</li>
+		</ul>
+
+
+		<h5>Ecommerce Admin Dashboard</h5>
+		<div class="img-container">
+			<img src="{% static 'images/ecom-admin-panel.jpg' %}">
+		</div>
+
+		<h6>Product Add Panel</h5>
+		<div class="img-container">
+			<img src="{% static 'images/product-panel.jpg' %}">
+		</div>
+	</div>
+
+</body>
+</html>

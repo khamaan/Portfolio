@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+	<title>Book Store Project</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="default.css">
+
+
+	<style type="text/css">
+		.img-container {
+			max-width: 600px;
+		}
+
+		img {
+			width: 100%
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="nav-wrapper">
+
+		<!-- Link around dots-wrapper added after tutorial video -->
+		<a href="#">
+			<div class="dots-wrapper">
+				<div id="dot-1" class="browser-dot"></div>
+				<div id="dot-2" class="browser-dot"></div>
+				<div id="dot-3" class="browser-dot"></div>
+			</div>
+		</a>
+	</div>
+
+	<div class="main-container">
+		<br>
+
+		<div class="img-container">
+			<img src="{% static 'images/book-store.jpg' %}">
+		</div>
+
+		<h3>Online Book Store</h3>
+
+		<p>This was a project I started back in September 2022 when I first learned python-Django. I was the sole
+			creator/developer for the last year of the project in my college.
+			<br>
+			<br>
+			The Webstie Deals with selling book,novels and many more categories.
+			<br>
+			<br>
+			This project can also be used as Library management or as online book reading platform by doing some changes
+			<br>
+			<br>
+			The Webstie has payment feature,Account Activation using mail,Login Register.
+			<br>
+			<br>
+			Link to this project is in my github repository 
+			<a target="_blank" href="https://github.com/khamaan/BlackBliss-Updated.git">Github: Project Link</a>
+		</p>
+
+		<h5>Technologies:</h5>
+		<ul>
+			<li>- Python</li>
+			<li>- Django </li>
+			<li>- JS</li>
+			<li>- Sqlite3</li>
+			<li>- Html</li>
+			<li>- Css</li>
+			<li>- Bootstrap</li>
+		</ul>
+
+
+		<h5>Ecommerce Admin Dashboard</h5>
+		<div class="img-container">
+			<img src="{% static 'images/ecom-admin-panel.jpg' %}">
+		</div>
+
+		<h6>Product Add Panel</h5>
+			<div class="img-container">
+				<img src="{% static 'images/product-panel.jpg' %}">
+			</div>
+
+	</div>
+
+</body>
+
+</html>
