@@ -14,7 +14,8 @@ def home(request):
         subject = f'New contact form submission from {name}'
         sender_email = settings.EMAIL_HOST_USER  # Use the same email as in settings.py
         recipient_email = 'khamaan5@gmail.com'  # Your email where you want to receive messages
-        send_mail(subject, message, sender_email, [recipient_email])
+        email_body = f"Name: {name}\nEmail: {email}\nsubject: {subject}\n\nMessage:\n{message}"
+        send_mail(subject, message, email_body, sender_email, [recipient_email])
         contact.save()
     return render(request,"index.html")
 
