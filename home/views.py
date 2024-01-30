@@ -12,7 +12,6 @@ def home(request):
         message = request.POST['message']
         contact = Contact.objects.create(name=name,email=email,subject=subject,message=message)
         contact.save()
-        subject = f'New contact form submission from {name}'
         to_email = "khamaan5@gmail.com"  # Your email where you want to receive messages
         email_body = f"Name: {name}\nEmail: {email}\nsubject: {subject}\n\nMessage:\n{message}"
         email_message = EmailMultiAlternatives(subject, email_body, settings.EMAIL_HOST_USER, [to_email])
