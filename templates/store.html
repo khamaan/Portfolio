@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% comment %} <!DOCTYPE html>
 {% load static %}
 <html>
 
@@ -92,4 +92,187 @@
 
 </body>
 
+</html> {% endcomment %}
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <style>
+        /* Existing inline styles */
+        .img-container {
+            max-width: 600px;
+        }
+        img {
+            width: 100%;
+        }
+        /* Additional inline styles for a more professional look */
+        body {
+            font-family: 'Roboto Mono', monospace;
+        }
+        .s1{
+            background-color: var(--mainColor);
+            border-bottom:1px solid var(--borderColor);
+            overflow:auto;
+        }
+        .nav-wrapper{
+            border-radius:5px 5px 0 0;
+            grid-area:nav-wrapper;
+            border-bottom: 1px solid var(--borderColor);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--mainColor);
+        }
+        .dots-wrapper{
+            display: flex;
+            padding: 10px;
+        }
+        #dot-1{
+            background-color:  #FC6058;
+        }
+        
+        #dot-2{
+            background-color:  #FEC02F;
+        }
+        
+        #dot-3{
+            background-color:  #2ACA3E;
+        }
+        
+        .browser-dot{
+            background-color: black;
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            margin: 5px;
+        
+            -webkit-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+            -moz-box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+            box-shadow: -1px 1px 3px -1px rgba(0,0,0,0.75);
+        
+        }
+        .main-container {
+            padding: 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+        h3, h5, h6 {
+            font-family: 'Russo One', sans-serif;
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+            color: #555;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li:before {
+            content: '•';
+            color: #6b7280;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+		a{
+			text-decoration: none;
+			color:#17a2b8;
+		}
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="main-container bg-white shadow-lg rounded-lg mt-5">
+        <h3 class="text-center text-3xl mt-5">Online Book Store</h3>
+        <section class="s1">
+            <div class="main-container">
+                <div class="intro-wrapper">
+                    <div class="nav-wrapper">
+                        <div class="img-container p-5">
+                            <a href="#">
+                                <div class="dots-wrapper">
+                                    <div id="dot-1" class="browser-dot"></div>
+                                    <div id="dot-2" class="browser-dot"></div>
+                                    <div id="dot-3" class="browser-dot"></div>
+                                </div>
+                            </a>
+                            <img src="{% static 'images/book-store.jpg' %}" alt="Ecommerce Project">
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h3>Online Book Store</h3>
+
+		<p>This was a project I started back in September 2022 when I first learned python-Django. I was the sole
+			creator/developer for the last year of the project in my college.
+			<br>
+			<br>
+			The Webstie Deals with selling book,novels and many more categories.
+			<br>
+			<br>
+			This project can also be used as Library management or as online book reading platform by doing some changes
+			<br>
+			<br>
+			The Webstie has payment feature,Account Activation using mail,Login Register.
+			<br>
+			<br>
+			Link to this project is in my github repository Github:
+			<a target="_blank" href="https://github.com/khamaan/BlackBliss-Updated.git">Project Link</a>
+		</p>
+
+		<h5>Technologies:</h5>
+		<ul>
+			<li>- Python</li>
+			<li>- Django </li>
+			<li>- JS</li>
+			<li>- Sqlite3</li>
+			<li>- Html</li>
+			<li>- Css</li>
+			<li>- Bootstrap</li>
+		</ul>
+
+        <h5 class="text-xl px-5">Ecommerce Admin Dashboard</h5>
+        <section class="s1">
+            <div class="main-container">
+                <div class="intro-wrapper">
+                    <div class="nav-wrapper">
+                        <div class="img-container p-5">
+                            <img src="{% static 'images/ecom-admin-panel.jpg' %}" alt="Admin Panel">
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <h6 class="text-lg px-5 pb-5">Product Add Panel</h6>
+        <section class="s1">
+            <div class="main-container">
+                <div class="intro-wrapper">
+                    <div class="nav-wrapper">
+                        <div class="img-container p-5">
+                            <img src="{% static 'images/product-panel.jpg' %}" alt="Product Panel">
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
 </html>
