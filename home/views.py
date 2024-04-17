@@ -1,9 +1,11 @@
+import re
 from django.shortcuts import render
 from django.core.mail import EmailMultiAlternatives
 from .models import Contact
 from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email
+import datetime
 
 # Create your views here.
 def home(request):
@@ -13,7 +15,11 @@ def home(request):
         subject = request.POST['subject']
         message = request.POST['message']
 
-        # Validate email
+        # Validate email format
+        if not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email):
+            return render(request, "index.html", {'error': 'Invalid email format'})
+
+        # Validate email existence
         try:
             validate_email(email)
         except ValidationError:
@@ -25,7 +31,9 @@ def home(request):
 
         # Check if user has already sent a message from the same IP address
         ip_address = request.META.get('REMOTE_ADDR')
-        if Contact.objects.filter(ip_address=ip_address).count() >= 2:
+        today = datetime.date.today()
+        messages_sent_today = Contact.objects.filter(ip_address=ip_address, created_at__date=today).count()
+        if messages_sent_today >= 2:
             return render(request, "index.html", {'error': 'You have reached the maximum limit of messages'})
 
         contact = Contact.objects.create(name=name, email=email, subject=subject, message=message, ip_address=ip_address)
